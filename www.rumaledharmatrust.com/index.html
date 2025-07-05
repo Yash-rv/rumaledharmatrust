@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rumale Dharma Trust</title>
+
+  <!--  Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!--  Core Styles  -->
+  <style>
+    /*  =========  DESIGN TOKENS  =========  */
+    :root {
+      --clr-brown: #8B4513;
+      --clr-beige: #F5DEB3;
+      --clr-cream: #FFF8DC;
+      --clr-accent: #A0522D;
+      --clr-dark: #4F2F20;
+      --radius: 12px;
+      --shadow-sm: 0 2px 6px rgb(0 0 0 / .08);
+      --shadow-lg: 0 10px 30px rgb(0 0 0 / .3);
+    }
+
+    /*  =========  GLOBAL RESET  =========  */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--clr-cream);
+      color: var(--clr-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /*  =========  HEADER  =========  */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .75rem 1.25rem;
+      background: var(--clr-brown);
+      box-shadow: var(--shadow-sm);
+    }
+    .logo { height: 90px; }
+
+    nav ul {
+      list-style: none;
+      display: flex; gap: 2rem;
+    }
+    nav a {
+      font-weight: 600; color: var(--clr-beige); position: relative;
+    }
+    nav a::after {
+      content: ""; position: absolute; left: 0; bottom: -4px;
+      width: 0; height: 2px; background: var(--clr-beige);
+      transition: width .3s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /*  =========  INTRO / HERO  =========  */
+    .intro-section {
+      position: relative; height: 100vh;
+      display: grid; place-items: center;
+      color: var(--clr-cream);
+      text-align: center;
+      isolation: isolate; /*  ensures overlay stacking  */
+    }
+    .intro-section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      animation: heroSlide 30s infinite;
+    }
+    .intro-section::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.6));
+    }
+    @keyframes heroSlide {
+      0%   { background-image: url("images/indexsection/heading.jpg"); }
+      33%  { background-image: url("images/indexsection/lockedgate.jpg"); }
+      67%  { background-image: url("images/indexsection/sign.jpg"); }
+      100% { background-image: url("images/indexsection/heading.jpg"); }
+    }
+    .intro-content {
+      position: relative; z-index: 1;
+      max-width: 680px; padding: 2rem;
+      backdrop-filter: blur(4px);
+      background: rgb(0 0 0 / .45);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+    .intro-content h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; color: var(--clr-cream); }
+    .intro-content p { font-size: 1.1rem; margin-inline: auto; color: var(--clr-beige); }
+    .intro-content .smaller-text { font-size: .95rem; opacity: .9; }
+    .donate-btn {
+      display: inline-block; margin-top: 1.75rem;
+      padding: .85rem 2.25rem;
+      background: var(--clr-accent);
+      color: var(--clr-cream); font-weight: 600; border-radius: 50px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .donate-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+    /*  =========  FADE‑IN UTILITY  =========  */
+    .fade-in-section { opacity: 0; transform: translateY(40px); transition: all .9s ease-out; }
+    .fade-in-section.visible { opacity: 1; transform: translateY(0); }
+
+    /*  =========  FLAGSHIP INITIATIVE  =========  */
+    .flagship-initiative-creative {
+      background: var(--clr-brown);
+      color: var(--clr-cream);
+      padding: 5rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .flagship-initiative-creative .background-decor {
+      position: absolute; top: -60px; right: -80px; width: 300px; aspect-ratio: 1;
+      background: radial-gradient(circle, var(--clr-beige), transparent 60%);
+      opacity: .35; animation: float 7s ease-in-out infinite;
+    }
+    @keyframes float { 0%, 100%{transform: translateY(0);} 50%{transform: translateY(20px);} }
+    .flagship-initiative-creative .text-section {
+      position: relative; z-index: 1;
+      background: rgba(0,0,0,.35);
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem 2rem; border-radius: var(--radius);
+      max-width: 800px; margin-inline: auto; text-align: center;
+    }
+    .flagship-initiative-creative h2 { font-size: 2.4rem; color: var(--clr-beige); margin-bottom: 1.25rem; }
+    .flagship-initiative-creative p { font-size: 1.05rem; margin-bottom: 2rem; }
+    .action-btn { background: var(--clr-beige); color: var(--clr-brown); padding: .75rem 2rem; border: none; border-radius: 50px; font-weight: 600; }
+    .action-btn:hover { background: #e5cba9; cursor: pointer; }
+
+    /*  =========  VISION / MISSION / VALUES  =========  */
+    .vision-mission-container { padding: 3rem 1rem; }
+    .vision-mission-container .section {
+      display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;
+    }
+    .section:nth-child(even) { flex-direction: row-reverse; }
+    .text-content { flex: 1; background: rgb(139 69 19 / .1); padding: 1.75rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+    .text-content h2 { color: var(--clr-brown); font-size: 2rem; margin-bottom: .75rem; }
+    .text-content p { font-size: 1rem; }
+    .image-content { flex: 1; text-align: center; }
+    .image-content img { width: 280px; aspect-ratio: 1 / 1; object-fit: contain; border-radius: var(--radius); }
+
+    /*  =========  SERVICES GRID  =========  */
+    .party-hall-section {
+      position: relative; padding: 5rem 1rem; text-align: center; color: var(--clr-cream);
+      background: url("images/indexsection/wedding.png") center/cover fixed;
+      isolation: isolate;
+    }
+    .party-hall-section::after {
+      content: ""; position: absolute; inset: 0; background: rgb(139 69 19 / .55);
+      z-index: -1;
+    }
+    .party-hall-section h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .grid-container {
+      display: grid; gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .grid-item {
+      background: rgb(255 255 255 / .85);
+      color: var(--clr-dark);
+      padding: 1.75rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .grid-item:hover { transform: translateY(-6px) scale(1.03); box-shadow: var(--shadow-lg); }
+    .grid-item h3 { font-size: 1.4rem; color: var(--clr-brown); margin-bottom: .85rem; }
+
+    /*  =========  FOOTER  =========  */
+    footer {
+      background: var(--clr-brown); color: var(--clr-cream); text-align: center;
+      padding: 2.5rem 1rem; margin-top: 4rem;
+    }
+    footer h3 { font-size: 1.75rem; margin-bottom: 1rem; border-bottom: 2px solid var(--clr-cream); display: inline-block; padding-bottom: .5rem; }
+    footer ul { list-style: none; margin: 1.5rem 0; }
+    footer li { margin-bottom: .5rem; font-size: 1.05rem; }
+    .locate-us a { display: inline-block; margin-top: .75rem; background: var(--clr-accent); color: var(--clr-cream); padding: .6rem 1.5rem; border-radius: 50px; font-weight: 600; transition: background .25s; }
+    .locate-us a:hover { background: #7C3D1C; }
+    .trademark { margin-top: 2rem; font-size: .9rem; opacity: .85; }
+
+    /*  =========  RESPONSIVE  =========  */
+    @media (max-width: 768px) {
+      header { flex-wrap: wrap; }
+      .logo { height: 70px; margin-bottom: .75rem; }
+      nav ul { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+      .vision-mission-container .section { flex-direction: column; text-align: center; }
+      .image-content img { width: 65%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!--  =========  HEADER  =========  -->
+  <header>
+    <img src="images/rumaledharmatrustlogo.png" alt="Rumale Dharma Trust Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html'">Home</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#contact-info">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--  =========  HERO / INTRO  =========  -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h1>Welcome to Rumale Dharma Trust</h1>
+      <p>Empowering communities, enriching lives, and spreading hope. Join us in making a difference.</p>
+      <p class="smaller-text">Rumale Dharma Trust is a nonprofit organization with a heartfelt mission to support underprivileged families and foster a sense of community. The Trust believes that everyone, regardless of financial circumstances, deserves the opportunity to celebrate life's precious moments in a dignified way.</p>
+      <a href="donate.html" target="_blank" class="donate-btn">Donate Now</a>
+    </div>
+  </section>
+
+  <!--  =========  FLAGSHIP INITIATIVE  =========  -->
+  <section class="flagship-initiative-creative fade-in-section" id="about-us">
+    <div class="background-decor"></div>
+    <div class="text-section">
+      <h2>Our Flagship Initiative</h2>
+      <p>
+        One of our flagship initiatives is the funding of a spacious party hall, designed specifically for those who cannot afford expensive venues. This space is available to families for hosting joyous occasions such as weddings, birthday parties, anniversaries, or other milestone celebrations. By eliminating the financial burden of venue costs, the Trust helps create memories that families can cherish forever.
+      </p>
+      <a href="donate.html"><button class="action-btn">Learn More</button></a>
+    </div>
+  </section>
+
+  <!--  =========  VISION / MISSION / VALUES  =========  -->
+  <div class="vision-mission-container">
+    <div class="section vision-section fade-in-section">
+      <div class="text-content">
+        <h2>Our Vision</h2>
+        <p>Rumale Dharma Trust is committed to uplifting lives and spreading happiness by ensuring that every family has a space to celebrate their joys and connect with their community, regardless of their economic background.</p>
+      </div>
+      <div class="image-content"><img src="images/indexsection/vision.png" alt="Vision Image" /></div>
+    </div>
+
+    <div class="section mission-section fade-in-section">
+      <div class="text-content">
+        <h2>Our Mission</h2>
+        <p>At Rumale Dharma Trust, our mission is to empower communities by providing accessible spaces for celebrations, education, and creativity. We aim to bridge economic divides, fostering unity and inclusivity through initiatives that bring people together and encourage mutual support.</p>
+      </div>
+      <div class="image-content"><img src="images/indexsection/mission.png" alt="Mission Image" /></div>
+    </div>
+
+    <div class="section values-section fade-in-section">
+      <div class="text-content">
+        <h2>Our Values</h2>
+        <p>At Rumale Dharma Trust, we believe in creating a positive and inclusive environment for all. Our core values guide every initiative we undertake and are embedded in everything we do:</p>
+      </div>
+      <div class="image-content"><img src="images/indexsection/values.png" alt="Values Image" /></div>
+    </div>
+  </div>
+
+  <!--  =========  SERVICES GRID  =========  -->
+  <section class="party-hall-section fade-in-section">
+    <h2>Our Services</h2>
+    <div class="grid-container">
+      <div class="grid-item">
+        <h3>Joyous Family Celebrations</h3>
+        <p>Host memorable occasions like weddings, birthday parties, anniversaries, or other milestone events. The party hall ensures these precious moments are celebrated in style without financial stress.</p>
+      </div>
+      <div class="grid-item">
+        <h3>Community Activities</h3>
+        <p>The party hall transforms into a vibrant venue for exhibitions, workshops, and cultural events, bringing the community together to celebrate art, education, and local initiatives.</p>
+      </div>
+      <div class="grid-item">
+        <h3>A Platform for Local Talent</h3>
+        <p>This multipurpose space fosters creativity and community spirit by offering a stage for talent to shine. It’s more than a venue—it's a place where ideas and dreams come alive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!--  =========  FOOTER  =========  -->
+  <footer id="contact-info">
+    <h3>Contact Us</h3>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:rumaledharmatrust@gmail.com">rumaledharmatrust@gmail.com</a></li>
+      <li><strong>Website:</strong> <a href="https://www.rumaledharmatrust.com" target="_blank">www.rumaledharmatrust.com</a></li>
+      <li><strong>Address:</strong> Rumale Dharma Trust, Bengaluru, Karnataka, India</li>
+    </ul>
+    <div class="locate-us"><a href="https://www.google.com/maps/place/13%C2%B017%2747.9%22N+77%C2%B032%2726.9%22E" target="_blank">Open in Google Maps</a></div>
+    <p class="trademark">© <span id="current-year"></span> Rumale Dharma Trust™. All rights reserved.</p>
+  </footer>
+
+  <!--  =========  INTERSECTION OBSERVER  =========  -->
+  <script>
+    //  dynamic year
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    //  fade‑in on scroll
+    const faders = document.querySelectorAll(".fade-in-section");
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .15 });
+    faders.forEach(sec => io.observe(sec));
+  </script>
+</body>
+</html>

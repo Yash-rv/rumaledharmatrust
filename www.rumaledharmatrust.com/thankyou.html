@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Rumale Dharma Trust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--clr-brown:#8B4513;--clr-beige:#F5DEB3;--clr-cream:#FFF8DC;--clr-accent:#A0522D;--clr-dark:#4F2F20;--radius:12px;--shadow-sm:0 2px 6px rgb(0 0 0 /.08);--shadow-lg:0 10px 30px rgb(0 0 0 /.3)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Poppins",sans-serif;background:var(--clr-cream);color:var(--clr-dark);line-height:1.6;scroll-behavior:smooth}
+    a{text-decoration:none;color:inherit}
+    header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--clr-brown);box-shadow:var(--shadow-sm)}
+    .logo{height:90px}
+    nav ul{list-style:none;display:flex;gap:2rem}
+    nav a{font-weight:600;color:var(--clr-beige);position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clr-beige);transition:width .3s}
+    nav a:hover::after{width:100%}
+
+    main{display:grid;place-items:center;text-align:center;padding:5rem 1rem}
+    .thank-wrap{max-width:700px;background:rgb(255 255 255 /.8);padding:2.5rem;border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+    .thank-wrap h1{font-size:clamp(2rem,5vw,2.8rem);color:var(--clr-brown);margin-bottom:1.5rem}
+    .thank-wrap p{font-size:1.1rem;margin-bottom:.75rem}
+
+    footer{background:var(--clr-brown);color:var(--clr-cream);text-align:center;padding:2.5rem 1rem;margin-top:4rem}
+    footer h3{font-size:1.75rem;margin-bottom:1rem;border-bottom:2px solid var(--clr-cream);display:inline-block;padding-bottom:.5rem}
+    footer ul{list-style:none;margin:1.5rem 0}
+    footer li{margin-bottom:.5rem;font-size:1.05rem}
+    .locate-us a{display:inline-block;margin-top:.75rem;background:var(--clr-accent);color:var(--clr-cream);padding:.6rem 1.5rem;border-radius:50px;font-weight:600;transition:background .25s}
+    .locate-us a:hover{background:#7C3D1C}
+    .trademark{margin-top:2rem;font-size:.9rem;opacity:.85}
+
+    @media(max-width:768px){header{flex-wrap:wrap}.logo{height:70px;margin-bottom:.75rem}nav ul{flex-wrap:wrap;gap:1rem;justify-content:center}}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/rumaledharmatrustlogo.png" alt="Rumale Dharma Trust Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about-us">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#contact-info">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="thank-wrap">
+      <h1>Thank You for Your Donation!</h1>
+      <p>Your generosity helps us continue our mission of providing a welcoming and accessible space for all. With your support, we can make meaningful improvements and ensure that everyone has the opportunity to celebrate, learn, and connect.</p>
+      <p style="color:var(--clr-dark);opacity:.85">A payment receipt will be sent to your email.</p>
+    </div>
+  </main>
+
+  <footer id="contact-info">
+    <h3>Contact Us</h3>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:rumaledharmatrust@gmail.com">rumaledharmatrust@gmail.com</a></li>
+      <li><strong>Website:</strong> <a href="https://www.rumaledharmatrust.com" target="_blank">www.rumaledharmatrust.com</a></li>
+      <li><strong>Address:</strong> Rumale Dharma Trust, Bengaluru, Karnataka, India</li>
+    </ul>
+    <div class="locate-us"><a href="https://www.google.com/maps/place/13%C2%B017%2747.9%22N+77%C2%B032%2726.9%22E" target="_blank">Open in Google Maps</a></div>
+    <p class="trademark">© <span id="yr3"></span> Rumale Dharma Trust™. All rights reserved.</p>
+  </footer>
+
+  <script>document.getElementById("yr3").textContent=new Date().getFullYear();</script>
+</body>
+</html>
