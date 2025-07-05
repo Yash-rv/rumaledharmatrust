@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Rumale Dharma Trust</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --clr-brown: #8B4513;
+      --clr-beige: #F5DEB3;
+      --clr-cream: #FFF8DC;
+      --clr-accent: #A0522D;
+      --clr-dark: #4F2F20;
+      --radius: 12px;
+      --shadow-sm: 0 2px 6px rgb(0 0 0 /.08);
+      --shadow-lg: 0 10px 30px rgb(0 0 0 /.3);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Poppins",sans-serif;background:var(--clr-cream);color:var(--clr-dark);line-height:1.6;scroll-behavior:smooth}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+
+    header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--clr-brown);box-shadow:var(--shadow-sm)}
+    .logo{height:90px;width:auto !important;}
+    nav ul{list-style:none;display:flex;gap:2rem}
+    nav a{font-weight:600;color:var(--clr-beige);position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clr-beige);transition:width .3s}
+    nav a:hover::after{width:100%}
+
+    .donate-intro{position:relative;display:grid;place-items:center;text-align:center;height:60vh;isolation:isolate;color:var(--clr-cream);padding:2rem}
+    .donate-intro::before{content:"";position:absolute;inset:0;background:url("images/donatepage/main.jpg") center/cover fixed}
+    .donate-intro::after{content:"";position:absolute;inset:0;background:rgb(0 0 0 /.55)}
+    .donate-wrapper{position:relative;z-index:1;max-width:700px;padding:2rem;background:rgb(0 0 0 /.4);backdrop-filter:blur(4px);border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+    .donate-wrapper h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
+    .donate-wrapper p{font-size:1.1rem}
+    .primary-btn{display:inline-block;margin-top:1.75rem;padding:.85rem 2.25rem;background:var(--clr-accent);color:var(--clr-cream);font-weight:600;border-radius:50px;transition:transform .25s,box-shadow .25s}
+    .primary-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+
+    .donate-cards{display:grid;gap:1.5rem;margin:3rem auto;max-width:1100px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 1rem}
+    .donate-card{background:var(--clr-brown);color:var(--clr-cream);padding:1.75rem;border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+    .donate-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:var(--shadow-lg)}
+
+    .donate-final{max-width:800px;margin:2rem auto 4rem;text-align:center;font-size:1rem;color:var(--clr-dark)}
+
+    .bank-details{max-width:700px;margin:2rem auto;padding:2rem;background:var(--clr-beige);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+    .bank-details h2{text-align:center;margin-bottom:1.5rem;color:var(--clr-dark)}
+    .bank-details p{margin-bottom:0.8rem;font-weight:500;word-break:break-word;display:flex;flex-direction:column;align-items:flex-start}
+    .bank-details p span{display:flex;align-items:center;gap:0.5rem;word-break:break-word}
+    .copy-btn{padding:0.4rem 1rem;font-size:0.9rem;border:none;border-radius:6px;background:var(--clr-accent);color:white;cursor:pointer;position:relative}
+    .copy-btn:hover{background:#7C3D1C}
+
+    .copy-toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .copy-toast.show {
+      opacity: 1;
+    }
+
+    footer{background:var(--clr-brown);color:var(--clr-cream);text-align:center;padding:2.5rem 1rem;margin-top:4rem}
+    footer h3{font-size:1.75rem;margin-bottom:1rem;border-bottom:2px solid var(--clr-cream);display:inline-block;padding-bottom:.5rem}
+    footer ul{list-style:none;margin:1.5rem 0}
+    footer li{margin-bottom:.5rem;font-size:1.05rem}
+    .locate-us a{display:inline-block;margin-top:.75rem;background:var(--clr-accent);color:var(--clr-cream);padding:.6rem 1.5rem;border-radius:50px;font-weight:600;transition:background .25s}
+    .locate-us a:hover{background:#7C3D1C}
+    .trademark{margin-top:2rem;font-size:.9rem;opacity:.85}
+
+    @media(max-width:768px){
+      header{flex-wrap:wrap}
+      .logo{height:70px;margin-bottom:.75rem}
+      nav ul{flex-wrap:wrap;gap:1rem;justify-content:center}
+      .bank-details p {align-items:flex-start;text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/rumaledharmatrustlogo.png" alt="Rumale Dharma Trust Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about-us">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#contact-info">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="donate-intro">
+    <div class="donate-wrapper">
+      <h1>Donate Now</h1>
+      <p>The party hall currently requires significant revival efforts to become fully functional and live up to its potential. Your donations will make a real difference.</p>
+      <a href="#bank-transfer" class="primary-btn">View Bank Details</a>
+    </div>
+  </section>
+
+  <div class="donate-cards">
+    <div class="donate-card"><p>Repair and renovate the hall, including structural improvements and safety upgrades.</p></div>
+    <div class="donate-card"><p>Install necessary amenities such as lighting, seating, kitchen facilities, and restroom upgrades.</p></div>
+    <div class="donate-card"><p>Maintain the hall for long-term use, ensuring cleanliness, functionality, and accessibility.</p></div>
+    <div class="donate-card"><p>Support subsidized usage for underprivileged families, enabling them to celebrate without financial strain.</p></div>
+    <div class="donate-card"><p>Develop community programs and workshops within the hall to educate and empower locals.</p></div>
+    <div class="donate-card"><p>Improve accessibility features such as ramps, handrails, and signage for differently-abled individuals.</p></div>
+  </div>
+
+  <section id="bank-transfer" class="bank-details">
+  <h2>Bank Transfer Details</h2>
+  <p><strong>Account Name:</strong> Rumale Dharma Chatra Trust</p>
+  <p><strong>Bank Name:</strong> Bank of India</p>
+  <p><strong>Branch:</strong> Doddaballapur</p>
+  <p><strong>Account Number:</strong> <span>67190100012806 <button class="copy-btn" onclick="copyText('67190100012806')">Copy</button></span></p>
+  <p><strong>IFSC Code:</strong> <span>BKID0008484 <button class="copy-btn" onclick="copyText('BKID0008484')">Copy</button></span></p>
+  <p>You can donate via NEFT or IMPS using the above details. Please email us at <a href="mailto:rumaledharmatrust@gmail.com" onclick="event.stopPropagation()">rumaledharmatrust@gmail.com after your donation for acknowledgment.</a></p>
+</section>
+
+  <p class="donate-final">By donating to Rumale Dharma Trust, you are directly helping to revive a space that brings joy, unity, and hope to countless families. Together, we can create a community hub that will touch lives for generations to come.</p>
+
+  <footer id="contact-info">
+    <h3>Contact Us</h3>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:rumaledharmatrust@gmail.com">rumaledharmatrust@gmail.com</a></li>
+      <li><strong>Website:</strong> <a href="https://www.rumaledharmatrust.com" target="_blank">www.rumaledharmatrust.com</a></li>
+      <li><strong>Address:</strong> Rumale Dharma Trust, Bengaluru, Karnataka, India</li>
+    </ul>
+    <div class="locate-us"><a href="https://www.google.com/maps/place/13%C2%B017%2747.9%22N+77%C2%B032%2726.9%22E" target="_blank">Open in Google Maps</a></div>
+    <p class="trademark">© <span id="yr"></span> Rumale Dharma Trust™. All rights reserved.</p>
+  </footer>
+
+  <div class="copy-toast" id="copyToast">Copied!</div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        const toast = document.getElementById("copyToast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1500);
+      });
+    }
+  </script>
+</body>
+</html>

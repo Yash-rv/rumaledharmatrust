@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Rumale Dharma Trust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --clr-brown:#8B4513; --clr-beige:#F5DEB3; --clr-cream:#FFF8DC;
+      --clr-accent:#A0522D; --clr-dark:#4F2F20; --radius:12px;
+      --shadow-sm:0 2px 6px rgb(0 0 0 /.1); --shadow-lg:0 10px 30px rgb(0 0 0 /.3);
+    }
+    *,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Poppins",sans-serif;background:var(--clr-cream);color:var(--clr-dark);scroll-behavior:smooth}
+    img{display:block;width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+
+    /* ===== HEADER ===== */
+    header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--clr-brown);box-shadow:var(--shadow-sm)}
+    .logo{height:90px;width:auto!important;}
+    nav ul{list-style:none;display:flex;gap:2rem}
+    nav a{font-weight:600;color:var(--clr-beige);position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clr-beige);transition:width .3s}
+    nav a:hover::after{width:100%}
+
+    /* ===== GALLERY ===== */
+    .gallery-wrapper{padding:4rem 1rem;max-width:1400px;margin-inline:auto;text-align:center}
+    .gallery-wrapper h1{font-size:2.6rem;color:var(--clr-brown);margin-bottom:2.5rem}
+
+    /* Photo grid */
+    .photo-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-bottom:3.5rem}
+    .photo-grid img{height:240px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:.35s}
+    .photo-grid img:hover{transform:translateY(-6px) scale(1.05);box-shadow:var(--shadow-lg)}
+
+    /* Video grid */
+    .video-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    .video-item{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:.35s}
+    .video-item:hover{transform:translateY(-6px) scale(1.03);box-shadow:var(--shadow-lg)}
+    .video-item video{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
+
+    /* Responsive tweaks */
+    @media(max-width:768px){
+      header{flex-wrap:wrap}.logo{height:70px;margin-bottom:.75rem}
+      nav ul{flex-wrap:wrap;gap:1rem;justify-content:center}
+      .photo-grid img{height:200px}
+    }
+
+    /* ===== FOOTER ===== */
+    footer{background:var(--clr-brown);color:var(--clr-cream);text-align:center;padding:2.5rem 1rem;margin-top:4rem}
+    footer h3{font-size:1.75rem;margin-bottom:1rem;border-bottom:2px solid var(--clr-cream);display:inline-block;padding-bottom:.5rem}
+    footer ul{list-style:none;margin:1.5rem 0}
+    footer li{margin-bottom:.5rem;font-size:1.05rem}
+    .locate-us a{display:inline-block;margin-top:.75rem;background:var(--clr-accent);color:var(--clr-cream);padding:.6rem 1.5rem;border-radius:50px;font-weight:600;transition:background .25s}
+    .locate-us a:hover{background:#7C3D1C}
+    .trademark{margin-top:2rem;font-size:.9rem;opacity:.85}
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <img src="images/rumaledharmatrustlogo.png" class="logo" alt="Rumale Dharma Trust Logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about-us">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#contact-info">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Gallery content ===== -->
+  <section class="gallery-wrapper">
+    <h1>Gallery</h1>
+
+    <!-- Photos -->
+    <div class="photo-grid">
+      <img src="images/gallery/anothersidewall.jpg" alt="Hall view 1" />
+      <img src="images/gallery/blackboard.jpg" alt="Hall view 2" />
+      <img src="images/gallery/board.jpg" alt="Hall view 3" />
+      <img src="images/gallery/frontgate.jpg" alt="Hall view 4" />
+      <img src="images/gallery/gate.jpg" alt="Hall view 5" />
+      <img src="images/gallery/pinkshop.jpg" alt="Hall view 6" />
+      <img src="images/gallery/shops.jpg" alt="Hall view 7" />
+      <img src="images/gallery/sidewall.jpg" alt="Hall view 8" />
+      <img src="images/gallery/shopsagain.jpg" alt="Hall view 9" />
+      <img src="images/gallery/wholebuilding.jpg" alt="Hall view 10" />
+    </div>
+
+    <!-- Videos -->
+    <div class="video-grid">
+      <div class="video-item"><video controls><source src="images/gallery/thirdvideo.mp4" type="video/mp4"></video></div>
+      <div class="video-item"><video controls><source src="images/gallery/anothershopsvideofromfront.mp4" type="video/mp4"></video></div>
+      <div class="video-item"><video controls><source src="images/gallery/shopsvideo.mp4" type="video/mp4"></video></div>
+      <div class="video-item"><video controls><source src="images/gallery/forthvideo.mp4" type="video/mp4"></video></div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer id="contact-info">
+    <h3>Contact Us</h3>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:rumaledharmatrust@gmail.com">rumaledharmatrust@gmail.com</a></li>
+      <li><strong>Website:</strong> <a href="https://www.rumaledharmatrust.com" target="_blank">www.rumaledharmatrust.com</a></li>
+      <li><strong>Address:</strong> Rumale Dharma Trust, Bengaluru, Karnataka, India</li>
+    </ul>
+    <div class="locate-us"><a href="https://www.google.com/maps/place/13%C2%B017%2747.9%22N+77%C2%B032%2726.9%22E" target="_blank">Open in Google Maps</a></div>
+    <p class="trademark">© <span id="yr_gallery"></span> Rumale Dharma Trust™. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById("yr_gallery").textContent = new Date().getFullYear();</script>
+</body>
+</html>
