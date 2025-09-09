@@ -22,7 +22,7 @@
       --shadow-lg: 0 10px 30px rgb(0 0 0 /.3);
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Poppins",sans-serif;background:var(--clr-cream);color:var(--clr-dark);line-height:1.6;scroll-behavior:smooth}
+    body{font-family:"Poppins",sans-serif;background:var(--clr-cream);color:var(--clr-dark);line-height:1.6;scroll-behavior:smooth;text-align:justify}
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
 
@@ -34,11 +34,11 @@
     nav a:hover::after{width:100%}
 
     .donate-intro{position:relative;display:grid;place-items:center;text-align:center;height:60vh;isolation:isolate;color:var(--clr-cream);padding:2rem}
-    .donate-intro::before{content:"";position:absolute;inset:0;background:url("images/donatepage/main.jpg") center/cover fixed}
+    .donate-intro::before{content:"";position:absolute;inset:0;background:url("images/donatepage/main.jpg") center/cover no-repeat;background-attachment:fixed}
     .donate-intro::after{content:"";position:absolute;inset:0;background:rgb(0 0 0 /.55)}
     .donate-wrapper{position:relative;z-index:1;max-width:700px;padding:2rem;background:rgb(0 0 0 /.4);backdrop-filter:blur(4px);border-radius:var(--radius);box-shadow:var(--shadow-lg)}
     .donate-wrapper h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
-    .donate-wrapper p{font-size:1.1rem}
+    .donate-wrapper p{font-size:1.1rem;text-align:justify}
     .primary-btn{display:inline-block;margin-top:1.75rem;padding:.85rem 2.25rem;background:var(--clr-accent);color:var(--clr-cream);font-weight:600;border-radius:50px;transition:transform .25s,box-shadow .25s}
     .primary-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 
@@ -46,7 +46,21 @@
     .donate-card{background:var(--clr-brown);color:var(--clr-cream);padding:1.75rem;border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
     .donate-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:var(--shadow-lg)}
 
-    .donate-final{max-width:800px;margin:2rem auto 4rem;text-align:center;font-size:1rem;color:var(--clr-dark)}
+    .donate-final{
+      max-width: 800px;
+      margin: 2rem auto 4rem;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--clr-dark);
+      padding: 1rem; /* Added padding for all devices */
+      text-align: justify; /* Ensures the text is justified */
+    }
+
+    @media (max-width: 768px) {
+      .donate-final {
+        padding: 1.5rem; /* Increased padding for mobile devices */
+      }
+    }
 
     .bank-details{max-width:700px;margin:2rem auto;padding:2rem;background:var(--clr-beige);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
     .bank-details h2{text-align:center;margin-bottom:1.5rem;color:var(--clr-dark)}
@@ -137,7 +151,7 @@
     <ul>
       <li><strong>Email:</strong> <a href="mailto:rumaledharmatrust@gmail.com">rumaledharmatrust@gmail.com</a></li>
       <li><strong>Website:</strong> <a href="https://www.rumaledharmatrust.com" target="_blank">www.rumaledharmatrust.com</a></li>
-      <li><strong>Address:</strong> Rumale Dharma Trust, Bengaluru, Karnataka, India</li>
+      <li><strong>Address:</strong> Rumale Dharma Trust, Doddaballapur, Karnataka, India</li>
     </ul>
     <div class="locate-us"><a href="https://www.google.com/maps/place/13%C2%B017%2747.9%22N+77%C2%B032%2726.9%22E" target="_blank">Open in Google Maps</a></div>
     <p class="trademark">© <span id="yr"></span> Rumale Dharma Trust™. All rights reserved.</p>
