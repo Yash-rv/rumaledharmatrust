@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rumale Family's History: Rumale Chennabasavaiah</title>
+  <title>Donate | Rumale Dharma Trust</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* =========  DESIGN TOKENS  =========  */
     :root {
       --clr-brown: #8B4513;
       --clr-beige: #F5DEB3;
@@ -18,225 +18,142 @@
       --clr-accent: #A0522D;
       --clr-dark: #4F2F20;
       --radius: 12px;
-      --shadow-sm: 0 2px 6px rgb(0 0 0 / .08);
-      --shadow-lg: 0 10px 30px rgb(0 0 0 / .3);
+      --shadow-sm: 0 2px 6px rgb(0 0 0 /.08);
+      --shadow-lg: 0 10px 30px rgb(0 0 0 /.3);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Poppins",sans-serif;background:var(--clr-cream);color:var(--clr-dark);line-height:1.6;scroll-behavior:smooth}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+
+    header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--clr-brown);box-shadow:var(--shadow-sm)}
+    .logo{height:90px;width:auto !important;}
+    nav ul{list-style:none;display:flex;gap:2rem}
+    nav a{font-weight:600;color:var(--clr-beige);position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clr-beige);transition:width .3s}
+    nav a:hover::after{width:100%}
+
+    .donate-intro{position:relative;display:grid;place-items:center;text-align:center;height:60vh;isolation:isolate;color:var(--clr-cream);padding:2rem}
+    .donate-intro::before{content:"";position:absolute;inset:0;background:url("images/donatepage/main.jpg") center/cover fixed}
+    .donate-intro::after{content:"";position:absolute;inset:0;background:rgb(0 0 0 /.55)}
+    .donate-wrapper{position:relative;z-index:1;max-width:700px;padding:2rem;background:rgb(0 0 0 /.4);backdrop-filter:blur(4px);border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+    .donate-wrapper h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
+    .donate-wrapper p{font-size:1.1rem}
+    .primary-btn{display:inline-block;margin-top:1.75rem;padding:.85rem 2.25rem;background:var(--clr-accent);color:var(--clr-cream);font-weight:600;border-radius:50px;transition:transform .25s,box-shadow .25s}
+    .primary-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+
+    .donate-cards{display:grid;gap:1.5rem;margin:3rem auto;max-width:1100px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 1rem}
+    .donate-card{background:var(--clr-brown);color:var(--clr-cream);padding:1.75rem;border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+    .donate-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:var(--shadow-lg)}
+
+    .donate-final{max-width:800px;margin:2rem auto 4rem;text-align:center;font-size:1rem;color:var(--clr-dark)}
+
+    .bank-details{max-width:700px;margin:2rem auto;padding:2rem;background:var(--clr-beige);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+    .bank-details h2{text-align:center;margin-bottom:1.5rem;color:var(--clr-dark)}
+    .bank-details p{margin-bottom:0.8rem;font-weight:500;word-break:break-word;display:flex;flex-direction:column;align-items:flex-start}
+    .bank-details p span{display:flex;align-items:center;gap:0.5rem;word-break:break-word}
+    .copy-btn{padding:0.4rem 1rem;font-size:0.9rem;border:none;border-radius:6px;background:var(--clr-accent);color:white;cursor:pointer;position:relative}
+    .copy-btn:hover{background:#7C3D1C}
+
+    .copy-toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .copy-toast.show {
+      opacity: 1;
     }
 
-    /* =========  GLOBAL RESET  =========  */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--clr-cream);
-      color: var(--clr-dark);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      text-align: justify;
-      /* Minimalist radial glows */
-      background-image:
-        radial-gradient(at 20% 15%, #fceeb266, transparent 50%),
-        radial-gradient(at 80% 90%, #fcd68e66, transparent 50%),
-        radial-gradient(at 50% 50%, #ffe3aa33, transparent 70%);
-      background-attachment: fixed;
-    }
-    img { display: block; max-width: 100%; height: auto; }
-    a { text-decoration: none; color: inherit; }
+    footer{background:var(--clr-brown);color:var(--clr-cream);text-align:center;padding:2.5rem 1rem;margin-top:4rem}
+    footer h3{font-size:1.75rem;margin-bottom:1rem;border-bottom:2px solid var(--clr-cream);display:inline-block;padding-bottom:.5rem}
+    footer ul{list-style:none;margin:1.5rem 0}
+    footer li{margin-bottom:.5rem;font-size:1.05rem}
+    .locate-us a{display:inline-block;margin-top:.75rem;background:var(--clr-accent);color:var(--clr-cream);padding:.6rem 1.5rem;border-radius:50px;font-weight:600;transition:background .25s}
+    .locate-us a:hover{background:#7C3D1C}
+    .trademark{margin-top:2rem;font-size:.9rem;opacity:.85}
 
-    /* =========  HEADER  =========  */
-    header {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .75rem 1.25rem;
-      background: var(--clr-brown);
-      box-shadow: var(--shadow-sm);
-    }
-    .logo { height: 90px; }
-
-    nav ul {
-      list-style: none;
-      display: flex; gap: 2rem;
-    }
-    nav a {
-      font-weight: 600; color: var(--clr-beige); position: relative;
-    }
-    nav a::after {
-      content: ""; position: absolute; left: 0; bottom: -4px;
-      width: 0; height: 2px; background: var(--clr-beige);
-      transition: width .3s ease;
-    }
-    nav a:hover::after, nav a.current-page::after { width: 100%; }
-
-    /* =========  ABOUT HERO  =========  */
-    .about-intro-section {
-      position: relative; height: 65vh;
-      display: grid; place-items: center;
-      color: var(--clr-cream);
-      text-align: center;
-      isolation: isolate;
-      padding: 2rem;
-    }
-    .about-intro-section::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: url("images/indexsection/sign.jpg") center/cover fixed;
-    }
-    .about-intro-section::after {
-      content: "";
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.6));
-    }
-    .intro-content {
-      position: relative; z-index: 1;
-      max-width: 800px; padding: 2.5rem;
-      backdrop-filter: blur(4px);
-      background: rgb(0 0 0 / .45);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-    }
-    .intro-content h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 1rem; color: var(--clr-cream); }
-    .intro-content p { font-size: 1.1rem; margin-inline: auto; color: var(--clr-beige); text-align: center; }
-    
-    /* =========  FADE‑IN UTILITY  =========  */
-    .fade-in-section { opacity: 0; transform: translateY(40px); transition: all .9s ease-out; }
-    .fade-in-section.visible { opacity: 1; transform: translateY(0); }
-    
-    /* =========  ABOUT CONTENT SECTIONS  =========  */
-    .content-container { padding: 3rem 1.5rem; max-width: 1000px; margin-inline: auto; }
-    .content-section {
-      background: rgb(139 69 19 / .08);
-      padding: 2rem 2.5rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 2.5rem;
-    }
-    .content-section h2 {
-      color: var(--clr-brown);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .content-section p {
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-    }
-    .content-section p:last-child { margin-bottom: 0; }
-
-    /* =========  FOOTER  =========  */
-    footer {
-      background: var(--clr-brown); color: var(--clr-cream); text-align: center;
-      padding: 2.5rem 1rem; margin-top: 4rem;
-    }
-    footer h3 { font-size: 1.75rem; margin-bottom: 1rem; border-bottom: 2px solid var(--clr-cream); display: inline-block; padding-bottom: .5rem; }
-    footer ul { list-style: none; margin: 1.5rem 0; }
-    footer li { margin-bottom: .5rem; font-size: 1.05rem; }
-    .locate-us a { display: inline-block; margin-top: .75rem; background: var(--clr-accent); color: var(--clr-cream); padding: .6rem 1.5rem; border-radius: 50px; font-weight: 600; transition: background .25s; }
-    .locate-us a:hover { background: #7C3D1C; }
-    .trademark { margin-top: 2rem; font-size: .9rem; opacity: .85; }
-
-    /* =========  RESPONSIVE OPTIMIZATIONS  =========  */
-    @media (max-width: 768px) {
-      header { flex-wrap: wrap; justify-content: center; }
-      .logo { height: 70px; margin-bottom: .75rem; }
-      nav ul { flex-wrap: wrap; gap: 1rem; justify-content: center; }
-      
-      .about-intro-section {
-        height: 55vh; /* Reduce banner height on mobile */
-        padding: 1rem;
-      }
-      .intro-content { padding: 1.5rem; }
-      .intro-content h1 { font-size: clamp(1.8rem, 7vw, 2.2rem); } /* Responsive heading */
-      .intro-content p { font-size: 1rem; }
-      
-      .content-container { padding: 2rem 1rem; }
-      .content-section { padding: 1.5rem; }
-      .content-section h2 { font-size: 1.7rem; } /* Smaller section titles */
-      .content-section p { font-size: 1rem; }
-
-      footer h3 { font-size: 1.5rem; }
-      footer li { font-size: 1rem; }
+    @media(max-width:768px){
+      header{flex-wrap:wrap}
+      .logo{height:70px;margin-bottom:.75rem}
+      nav ul{flex-wrap:wrap;gap:1rem;justify-content:center}
+      .bank-details p {align-items:flex-start;text-align:left}
     }
   </style>
 </head>
-
 <body>
   <header>
     <img src="images/rumaledharmatrustlogo.png" alt="Rumale Dharma Trust Logo" class="logo" />
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="current-page">About Us</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="#contact-info">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="about-intro-section">
-      <div class="intro-content">
-        <h1>The Legacy of Rumale Chennabasavaiah</h1>
-        <p>A painter, freedom fighter, editor, and legislator—a man of diverse talents and unwavering dedication.</p>
-      </div>
-    </section>
-
-    <div class="content-container">
-      <div class="content-section fade-in-section">
-        <h2>An Artist Addicted to Nature</h2>
-        <p>If anyone in the cool shade of bougainvillea bush at Cubbon park heard some rustle, chances would be that it was Rumale Chennabasavaiah squatting and furiously welding his brush to capture on canvas colourful scenes in the park. Any place of colourful vegetation was the favourite haunt of the artist. He was fascinated specially by the gulmohur season.</p>
-        <p>Rumale used to be relentlessly in search of spots that caught his fancy, and when he found one he would start working on canvas oblivious of the curious onlookers. Thus, Rumale's presence could be felt in most of the beautiful places in City. His fascination was not limited to gulmohurs or bougainvilleaas. Other subjects too interested him. He was mostly an artist addicted to Nature and open areas.</p>
-      </div>
-
-      <div class="content-section fade-in-section">
-        <h2>An Unlikely Beginning</h2>
-        <p>Rumale did not hail from a family of artists. When his brother late D.R. Chennarudraiah of Mysore Civil Service pursued him to learn painting at the Kalamandiram in Bangalore he merely wanted him to keep from 'mischief'. He might not have foreseen that his brother would one day shape himself into a distinguished painter.</p>
-      </div>
-
-      <div class="content-section fade-in-section">
-        <h2>A Man of Diverse Talents</h2>
-        <p>Two personalities stand out prominently in the world of painters of the erstwhile Mysore State. Though there was a generation gap between them, both had many things in common. Both were staunch nationalists, always dressed in Khadi; both were tall and lean; both were concerned about the development of Fine arts in the State and welfare of artists. While A.N. Subba Rao took to teaching and established the popular Kalamandiram in Basavangudi, Rumale pursued a lonelier path. His was a chequered career. He was a person of diverse interests. He was a painter, freedom fighter, editor and a legislator. He was also the leader of Sevadal and the brain behind art sections in the Congress Swadeshi exhibitions in the State. He also published a booklet on artists.</p>
-        <p>As a painter Rumale was mostly figurative. He was more a Chronicler than an interpreter of his subjects. But he was partial to landscapes. This inevitably made him prefer open spaces, fresh air, beauty of sky, clouds and the colourful vistas. Though landscapes were his forte he had done some portraits too.</p>
-      </div>
-
-      <div class="content-section fade-in-section">
-        <h2>The Call of Freedom</h2>
-        <p>In the mid 1930s the pure white Khadi clad young Rumale was conspicuous in the corridors and the class rooms of CTI Mysore, where he had joined to pursue higher studies in painting. He had the guidance of the masters of that period such as N.G. Pavange, Keshavaiah, S.G. Tankasale and others. But the call of the freedom movement was so strong that he kept aside his artistic pursuits to join the mainstream. This led to opening of a new chapter in his life.</p>
-        <p>He participated in the agitation for responsible government in the State and was jailed. He had also participated in the Salt Satyagraha and was jailed. After release, he worked for the reorganisation of the Sevadal and was its leader for some time. Next he went up the ladder to get nominated to the Legislative Council. He served for nearly eight years and later entered journalism to become the editor of Thainadu daily for sometime.</p>
-      </div>
-      
-      <div class="content-section fade-in-section">
-        <h2>Spiritual Journey & Artistic Legacy</h2>
-        <p>Meanwhile, he developed a spiritual interest and came under the influence of Sivabalayogi. He painted a couple of portraits as a tribute to his guru. He was also attracted by Tapasviji Maharaj who helped him to undergo Kayakalpa (rejuvenation process) twice. His interests also covered astrology and Naadisatra. Thus the bachelor Rumale was always engaged in some pursuit or the other.</p>
-        <p>Finally the call of the brush was strong and he spent the evening of his life mostly weilding it. In the CTI, Rumale had already revealed a highly individualistic streak in his works using water and oil mediums. His style had many features of impressionism and expressionism, but it had a distinct Rumale touch. Direct application of colours of the requisite tone instead of mixing, energetic strokes of brush and an overall fluidity in the scheme were distinctive features of his paintings.</p>
-        <p>He was so obsessed with nature that he spent long hours in river valleys and dry river beds to capture the colour and form on the canvas. the colourful painting world that is how able to possess his priceless pictures to-day.</p>
-      </div>
+  <section class="donate-intro">
+    <div class="donate-wrapper">
+      <h1>Donate Now</h1>
+      <p>The party hall currently requires significant revival efforts to become fully functional and live up to its potential. Your donations will make a real difference.</p>
+      <a href="#bank-transfer" class="primary-btn">View Bank Details</a>
     </div>
-  </main>
+  </section>
+
+  <div class="donate-cards">
+    <div class="donate-card"><p>Repair and renovate the hall, including structural improvements and safety upgrades.</p></div>
+    <div class="donate-card"><p>Install necessary amenities such as lighting, seating, kitchen facilities, and restroom upgrades.</p></div>
+    <div class="donate-card"><p>Maintain the hall for long-term use, ensuring cleanliness, functionality, and accessibility.</p></div>
+    <div class="donate-card"><p>Support subsidized usage for underprivileged families, enabling them to celebrate without financial strain.</p></div>
+    <div class="donate-card"><p>Develop community programs and workshops within the hall to educate and empower locals.</p></div>
+    <div class="donate-card"><p>Improve accessibility features such as ramps, handrails, and signage for differently-abled individuals.</p></div>
+  </div>
+
+  <section id="bank-transfer" class="bank-details">
+  <h2>Bank Transfer Details</h2>
+  <p><strong>Account Name:</strong> Rumale Dharma Chatra Trust</p>
+  <p><strong>Bank Name:</strong> Bank of India</p>
+  <p><strong>Branch:</strong> Doddaballapur</p>
+  <p><strong>Account Number:</strong> <span>67190100012806 <button class="copy-btn" onclick="copyText('67190100012806')">Copy</button></span></p>
+  <p><strong>IFSC Code:</strong> <span>BKID0008484 <button class="copy-btn" onclick="copyText('BKID0008484')">Copy</button></span></p>
+  <p>You can donate via NEFT or IMPS using the above details. Please email us at <a href="mailto:rumaledharmatrust@gmail.com" onclick="event.stopPropagation()">rumaledharmatrust@gmail.com after your donation for acknowledgment.</a></p>
+</section>
+
+  <p class="donate-final">By donating to Rumale Dharma Trust, you are directly helping to revive a space that brings joy, unity, and hope to countless families. Together, we can create a community hub that will touch lives for generations to come.</p>
 
   <footer id="contact-info">
     <h3>Contact Us</h3>
     <ul>
       <li><strong>Email:</strong> <a href="mailto:rumaledharmatrust@gmail.com">rumaledharmatrust@gmail.com</a></li>
       <li><strong>Website:</strong> <a href="https://www.rumaledharmatrust.com" target="_blank">www.rumaledharmatrust.com</a></li>
-      <li><strong>Address:</strong> Rumale Dharma Trust, Doddaballapur, Karnataka, India</li>
+      <li><strong>Address:</strong> Rumale Dharma Trust, Bengaluru, Karnataka, India</li>
     </ul>
     <div class="locate-us"><a href="https://www.google.com/maps/place/13%C2%B017%2747.9%22N+77%C2%B032%2726.9%22E" target="_blank">Open in Google Maps</a></div>
-    <p class="trademark">© <span id="current-year"></span> Rumale Dharma Trust™. All rights reserved.</p>
+    <p class="trademark">© <span id="yr"></span> Rumale Dharma Trust™. All rights reserved.</p>
   </footer>
 
-  <script>
-    //  dynamic year
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+  <div class="copy-toast" id="copyToast">Copied!</div>
 
-    //  fade‑in on scroll
-    const faders = document.querySelectorAll(".fade-in-section");
-    const io = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        const toast = document.getElementById("copyToast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1500);
       });
-    }, { threshold: .15 });
-    faders.forEach(sec => io.observe(sec));
+    }
   </script>
 </body>
 </html>
