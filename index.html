@@ -173,6 +173,46 @@
     .grid-item h3 { font-size: 1.4rem; color: var(--clr-brown); margin-bottom: .85rem; }
     .grid-item p { text-align: justify; }
 
+    /* =========  DONATION SECTION  =========  */
+    .donate-section {
+      padding: 5rem 1rem;
+      background: linear-gradient(rgba(139, 69, 19, 0.1), rgba(139, 69, 19, 0.2));
+      text-align: center;
+    }
+    .donate-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+    .donate-container h2 {
+      color: var(--clr-brown);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .donate-container p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .donate-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.5rem;
+      background: var(--clr-accent);
+      color: var(--clr-cream);
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .donate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
     /* =========  FOOTER  =========  */
     footer {
       background: var(--clr-brown); color: var(--clr-cream); text-align: center;
@@ -192,6 +232,38 @@
       nav ul { flex-wrap: wrap; gap: 1rem; justify-content: center; }
       .vision-mission-container .section { flex-direction: column; text-align: center; }
       .vision-mission-container .image-content { display: none; } /* Added to remove logos on mobile */
+      
+      /* Add padding to intro content on mobile */
+      .intro-content {
+        padding: 1.5rem 1rem;
+        margin: 0 1rem;
+      }
+      .intro-content h1 {
+        padding: 0 0.5rem;
+      }
+      .intro-content p {
+        padding: 0 0.5rem;
+      }
+      
+      /* Mobile optimization for donation section */
+      .donate-section {
+        padding: 3rem 1rem;
+      }
+      .donate-container {
+        padding: 1.5rem;
+      }
+      .donate-container h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+      .donate-container p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+      .donate-btn {
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -214,7 +286,7 @@
       <h1>Welcome to Rumale Dharma Trust</h1>
       <p>Empowering communities, enriching lives, and spreading hope. Join us in making a difference.</p><br>
       <p class="smaller-text">Rumale Dharma Trust is a nonprofit organization with a heartfelt mission to support underprivileged families and foster a sense of community. The Trust believes that everyone, regardless of financial circumstances, deserves the opportunity to celebrate life's precious moments in a dignified way.</p>
-      <a href="donate.html" target="_blank" class="donate-btn">Donate Now</a>
+    
     </div>
   </section>
 
@@ -225,7 +297,7 @@
       <p>
         One of our flagship initiatives is the funding of a spacious party hall, designed specifically for those who cannot afford expensive venues. This space is available to families for hosting joyous occasions such as weddings, birthday parties, anniversaries, or other milestone celebrations. By eliminating the financial burden of venue costs, the Trust helps create memories that families can cherish forever.
       </p>
-      <a href="donate.html"><button class="action-btn">Learn More</button></a>
+      <a href="gallery.html"><button class="action-btn">View Gallery</button></a>
     </div>
   </section>
 
@@ -270,6 +342,16 @@
         <h3>A Platform for Local Talent</h3>
         <p>This multipurpose space fosters creativity and community spirit by offering a stage for talent to shine. It’s more than a venue—it's a place where ideas and dreams come alive.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- New donation section -->
+  <section class="donate-section fade-in-section">
+    <div class="donate-container">
+      <h2>Support Our Cause</h2>
+      <p>Your contribution makes a significant impact on our ability to serve the community. By donating to Rumale Dharma Trust, you help us maintain our facilities, expand our reach, and ensure that our services remain accessible to those who need them most.</p>
+      <p>Every donation, regardless of size, brings us closer to our goal of creating a more inclusive and supportive community where everyone can celebrate life's precious moments with dignity.</p>
+      <a href="donate.html" class="donate-btn">Donate Now</a>
     </div>
   </section>
 
